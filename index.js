@@ -2,6 +2,7 @@ var request = require('request');
 var apiUrl = 'http://api-adresse.data.gouv.fr/';
 
 function NationalAddress() {
+  this.apiUrl = apiUrl;
 }
 
 function req(method, apiUrl, path, callback) {
