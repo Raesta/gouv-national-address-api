@@ -23,4 +23,20 @@ function req(method, apiUrl, path, callback) {
   });
 }
 
+NationalAddress.prototype.search = function(params, callback) {
+  if (!params) return callback('MISSING_PARAMETERS');
+  if (!params.text) return callback('MISSING_TEXT');
+  var url = apiUrl + 'search/?q=' + params.text;
+  if (params.limit) url = url + '&limit=' + params.limit;
+  if (params.autocomplete) url = url + '&autocomplete=' + params.autocomplete;
+  if (params.lat) url = url + '&lat=' + params.lat;
+  if (params.lon) url = url + '&lon=' + params.lon;
+  if (params.type) url = url + '&type=' + params.type;
+  if (params.postcode) url = url + '&postcode=' + params.postcode;
+  if (params.citycode) url = url + '&citycode=' + params.citycode;
+  req('GET', url, null, function(error, result) {
+    if (error) return callback(error);
+    else return callback(null, result);
+  });
+}
 module.exports = NationalAddress;
