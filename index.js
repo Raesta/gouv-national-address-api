@@ -39,4 +39,15 @@ NationalAddress.prototype.search = function(params, callback) {
     else return callback(null, result);
   });
 }
+NationalAddress.prototype.reverse = function(params, callback) {
+  if (!params) return callback('MISSING_PARAMETERS')
+  if (!params.lon) return callback('MISSING_LON');
+  if (!params.lat) return callback('MISSING_LAT');
+  var url = apiUrl + 'reverse/?lon=' + params.lon + '&lat=' + params.lat;
+  if (params && params.type) url = url + '&type=' + params.type;
+  req('GET', url, null, function(error, result) {
+    if (error) return callback(error);
+    else return callback(null, result);
+  });
+}
 module.exports = NationalAddress;
