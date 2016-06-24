@@ -1,0 +1,22 @@
+{
+  "name": "gouv-national-address-api",
+  "version": "0.0.1",
+  "description": "gouv-national-address-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raesta/gouv-national-address-api.git"
+  },
+  "author": "Raesta <Contact@raesta.net> (Raesta)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Raesta/gouv-national-address-api/issues"
+  },
+  "homepage": "https://github.com/Raesta/gouv-national-address-api#readme",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
+}
